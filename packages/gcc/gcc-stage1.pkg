@@ -1,0 +1,6 @@
+package_gcc_url="http://ftp.gnu.org/gnu/gcc/gcc-5.3.0/gcc-5.3.0.tar.bz2"
+
+gcc_build() {
+}
+gcc_install() {
+}

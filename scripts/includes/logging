@@ -1,0 +1,52 @@
+#
+# logging formatting options
+#
+logging_formatting_bold=$(tput bold)
+logging_formatting_reset=$(tput sgr0)
+logging_formatting_red=$(tput setaf 1)
+logging_formatting_green=$(tput setaf 2)
+logging_formatting_yellow=$(tput setaf 3)
+logging_formatting_blue=$(tput setaf 4)
+logging_formatting_magenta=$(tput setaf 5)
+logging_formatting_cyan=$(tput setaf 6)
+logging_formatting_white=$(tput setaf 7)
+
+#
+# log - used for
+#
+log() {
+	echo -n "  ${logging_formatting_cyan}> "
+	echo -n "${logging_formatting_white}"
+	echo -n "${@}"
+	echo -n "${logging_formatting_reset}"
+	echo
+}
+
+#
+#
+#
+info() {
+	echo -n "  ${logging_formatting_cyan}> "
+	echo -n "${logging_formatting_green}"
+	echo -n "${@}"
+	echo -n "${logging_formatting_reset}"
+	echo
+}
+ 
+# #
+# #
+# #
+# msg() {
+# }
+# 
+# #
+# #
+# #
+# warning() {
+# }
+# 
+# #
+# #
+# #
+# error() {
+# }

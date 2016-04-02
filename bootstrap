@@ -1,0 +1,34 @@
+#!/bin/bash
+brewery_source_root="${BASH_SOURCE%/*}"
+if [[ ! -d "$brewery_source_root" ]]; then brewery_source_root="$PWD"; fi
+. "$brewery_source_root/scripts/includes/include"
+
+include includes/logging
+include download-pkg
+DIRECTORIES=(
+	output
+	output/build
+	output/images
+	output/toolchain
+	output/rootfs
+	output/
+)
+
+PACKAGES=(
+	ruby
+	binutils
+	coreutils
+	gcc
+	systemd
+	iproute2
+	connman
+)
+for DIR in ${DIRECTORIES[*]};
+do
+	info "${DIR}"
+done
+
+for PKG in ${PACKAGES[*]};
+do
+	download_package "${PKG}"
+done
